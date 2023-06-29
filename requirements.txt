@@ -1,7 +1,7 @@
-streamlit 
+streamlit
 folium
-altair
+altair==4.2.2
 pandas
-streamlit_folium
+streamlit-folium
 requests
-io
+
