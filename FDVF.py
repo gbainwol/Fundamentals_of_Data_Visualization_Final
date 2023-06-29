@@ -3,15 +3,15 @@ import streamlit as st
 import altair as alt
 import numpy as np
 import folium
+import requests
 from folium.plugins import HeatMap
 from streamlit_folium import folium_static
-import streamlit as st
-
+from io import StringIO
 # Written section
 written_section = """
 # Interactive COVID-19 Data Visualization Page by Garrett Bainwol
 6/24/2023
-## LINK TO CSVs and CODE (note if you download the code and CSVs you must update the file path):
+## LINK TO github repository
 https://github.com/gbainwol/Fundamentals_of_Data_Visualization_Final
 
 That is the link to the repository on GitHub
@@ -62,8 +62,16 @@ st.header(" Data Visualizations below")
 
 st.header(' Global Visualizations')
 # Load data
-global_data = pd.read_csv("/Users/garrettbainwol/Desktop/global2.csv")
-us_data = pd.read_csv("/Users/garrettbainwol/Desktop/us2.csv")
+
+
+global_data_url = "https://github.com/gbainwol/Fundamentals_of_Data_Visualization_Final/blob/main/global2.csv"
+us_data_url = "https://github.com/gbainwol/Fundamentals_of_Data_Visualization_Final/blob/main/US2.csv"
+
+global_data_content = requests.get(global_data_url).content
+us_data_content = requests.get(us_data_url).content
+
+global_data = pd.read_csv(StringIO(global_data_content.decode('utf-8')))
+us_data = pd.read_csv(StringIO(us_data_content.decode('utf-8')))
 
 def compute_ratios(df):
     df['Cases/Population'] = df['cases'] / df['Population']
