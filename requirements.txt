@@ -3,4 +3,5 @@ folium
 altair
 pandas
 streamlit_folium
-
+requests
+io
