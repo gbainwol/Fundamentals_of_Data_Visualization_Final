@@ -58,7 +58,7 @@ Overall, this project serves as a testament to the challenges faced during the c
 st.markdown(written_section)
 st.header(" Data Visualizations below")
 
-#change file path for global_data and us_data to run code 
+
 
 st.header(' Global Visualizations')
 # Load data
