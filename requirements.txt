@@ -1,0 +1,6 @@
+streamlit 
+folium
+altair
+pandas
+streamlit_folium
+
