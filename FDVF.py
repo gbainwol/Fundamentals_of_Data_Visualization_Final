@@ -64,14 +64,15 @@ st.header(' Global Visualizations')
 # Load data
 
 
-global_data_url = "https://github.com/gbainwol/Fundamentals_of_Data_Visualization_Final/blob/main/global2.csv"
-us_data_url = "https://github.com/gbainwol/Fundamentals_of_Data_Visualization_Final/blob/main/US2.csv"
-
+global_data_url = "https://raw.githubusercontent.com/gbainwol/Fundamentals_of_Data_Visualization_Final/main/global2.csv"
+us_data_url = "https://raw.githubusercontent.com/gbainwol/Fundamentals_of_Data_Visualization_Final/main/US2.csv"
 global_data_content = requests.get(global_data_url).content
 us_data_content = requests.get(us_data_url).content
 
 global_data = pd.read_csv(StringIO(global_data_content.decode('utf-8')))
 us_data = pd.read_csv(StringIO(us_data_content.decode('utf-8')))
+
+
 
 def compute_ratios(df):
     df['Cases/Population'] = df['cases'] / df['Population']
