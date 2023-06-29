@@ -1,2 +1,2 @@
 # Fundamentals_of_Data_Visualization_Final
-The code and CSVs for running my final project for this course.
+The web app can be reached here: https://fdvfpy-kxri0888jl.streamlit.app
